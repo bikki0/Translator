@@ -15,12 +15,12 @@ class Screen:
     SPI_DEVICE = 0
 
     def __init__(self, color=255):
+        # setup screen
         self.color = color
         self._display = Adafruit_SSD1306.SSD1306_128_32(rst=self.RST)
         self._display.begin()
         self._display.clear()
         self._display.display()
-
         self.width = self._display.width
         self.height = self._display.height
 
