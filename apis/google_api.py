@@ -1,11 +1,9 @@
 import io
 
-import html.parser as htmlparser
-
 from google.cloud import speech_v1p1beta1 as speech
 from google.cloud import texttospeech
 from google.cloud import translate
-
+import html.parser as htmlparser
 
 class GoogleAPI:
     SAMPLE_RATE = 44100
@@ -52,7 +50,6 @@ class GoogleAPI:
         response = self._text_to_sound.synthesize_speech(texttospeech.types.SynthesisInput(text=text),
                                                          voice,
                                                          self._audio_config)
-
         with open(path, 'wb') as out:
             out.write(response.audio_content)
 
