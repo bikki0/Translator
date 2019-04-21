@@ -80,7 +80,6 @@ class Translator:
     def switch_language(self):
         if self._is_recording:
             return
-
         self._logger.debug('switch_language')
         self._is_customer = True
         self._language = (self._language + 1) % len(self.LANGUAGES)

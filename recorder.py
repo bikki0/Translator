@@ -26,7 +26,7 @@ class Recorder:
         sd.stop()
         duration = int(math.ceil(time.time() - self._start_time))
         data = self._recording[:duration * sd.default.samplerate]
-          
+        # save audio
         audio = pyaudio.PyAudio()
         format = pyaudio.paInt16
         
